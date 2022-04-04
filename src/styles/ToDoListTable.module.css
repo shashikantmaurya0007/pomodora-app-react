@@ -1,0 +1,42 @@
+.btn {
+    outline: none;
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 70px;
+    padding: 4px 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    height: 3rem;
+    width: 3rem;
+}
+
+.btn_size {
+    font-size: 12rem;
+}
+
+.btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.secondary_btn {
+    color: white;
+    background-color: #1eb5eb;
+}
+
+.todolist_title_add_btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.todolist_box {
+    width: 80%;
+    margin: 0 auto;
+}

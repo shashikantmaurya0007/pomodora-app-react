@@ -4,7 +4,7 @@ const themeContext = createContext("light");
 
 const useTheme = () => useContext(themeContext);
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   const updateTheme = () => {
     console.log("clicked");
@@ -25,7 +25,8 @@ const ThemeProvider = ({ children }) => {
 
   return (
     <themeContext.Provider value={{ theme, updateTheme }}>
-      {children}
+      {" "}
+      {children}{" "}
     </themeContext.Provider>
   );
 };
