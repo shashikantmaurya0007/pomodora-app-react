@@ -33,7 +33,7 @@ const AddToDoModel = ({ showModel, setShowModel }) => {
   return (
     <div className={`${styles.model} `}>
       <div
-        className={`${theme == "dark" ? "dark" : "light"} ${
+        className={`${theme === "dark" ? "dark" : "light"} ${
           styles.model_content
         }  `}
       >
