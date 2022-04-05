@@ -1,0 +1,101 @@
+.model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.model_content {
+    width: 20rem;
+    border-radius: 10px;
+}
+
+.model_crossbtn_container {
+    display: flex;
+    justify-content: flex-end;
+    width: 18rem;
+    font-size: 0.8rem;
+    padding: 1rem 0rem;
+}
+
+.model_cross_btn {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.todo_form_ {
+    display: flex;
+    flex-direction: column;
+    padding: 2 rem 0rem;
+    width: 18rem;
+    margin: 0 auto;
+}
+
+.todo_form_input {
+    padding: 1rem 1rem;
+    outline: none;
+    border: 0px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin: 0.3rem 0.3rem;
+    border-radius: 0.3rem;
+    background-color: var(--input_bg_color);
+    font-size: medium;
+    font-weight: bold;
+}
+
+.todo_form_desc {
+    height: 5rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    resize: none;
+}
+
+.btn_container {
+    width: 18rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1rem 0rem;
+}
+
+.btn {
+    outline: none;
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 70px;
+    padding: 4px 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.primary_btn {
+    color: #1eb5eb;
+    border: 2px solid #1eb5eb;
+    background-color: var(--input_bg_color);
+}
+
+.secondary_btn {
+    color: white;
+    background-color: #1eb5eb;
+}
+
+:root {
+    --input_bg_color: #dfdfe2;
+}

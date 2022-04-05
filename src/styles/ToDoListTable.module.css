@@ -1,0 +1,52 @@
+.btn {
+    outline: none;
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 70px;
+    padding: 4px 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    height: 3rem;
+    width: 3rem;
+}
+
+.btn_size {
+    font-size: 12rem;
+}
+
+.btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.secondary_btn {
+    color: white;
+    background-color: #1eb5eb;
+}
+
+.todolist_title_add_btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.todo_container_dark_theme {
+    background-color: var(--todo_container_dark_theme);
+    color: whitesmoke;
+}
+
+.todolist_box {
+    width: 80%;
+    margin: 0 auto;
+    min-height: 70vh;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
