@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AddToDoModel } from "./componentIndex";
 import { AiFillPlusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import styles from "../styles/ToDoListTable.module.css";
+import { DisplayTodos } from "./componentIndex";
 const ToDoListTable = () => {
   const [showModel, setShowModel] = useState(false);
   return (
@@ -16,9 +17,10 @@ const ToDoListTable = () => {
             <AiOutlinePlusCircle className={styles.btn_size} />
           </button>
         </div>
+        <DisplayTodos />
       </div>
 
-      <AddToDoModel showModel={showModel} />
+      <AddToDoModel showModel={showModel} setShowModel={setShowModel} />
     </div>
   );
 };

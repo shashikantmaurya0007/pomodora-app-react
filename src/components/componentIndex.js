@@ -5,3 +5,6 @@ from "./ToDoListTable";
 
 export { AddToDoModel }
 from "./AddToDoModel";
+
+export { DisplayTodos }
+from "./DisplayTodos";
