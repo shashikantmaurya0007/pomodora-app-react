@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styles from "../styles/Model.module.css";
 import { ImCross } from "react-icons/im";
-import { useTheme, addTodo, useTodo, TODO_ACTION } from "../state/stateIndex";
+import { useTheme, addTodo, useTodo } from "../state/stateIndex";
 const AddToDoModel = ({ showModel, setShowModel }) => {
   const { theme } = useTheme();
   const initalState = {

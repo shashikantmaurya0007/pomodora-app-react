@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AddToDoModel } from "./componentIndex";
-import { AiFillPlusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import styles from "../styles/ToDoListTable.module.css";
 import { DisplayTodos } from "./componentIndex";
 import { useTheme } from "../state/stateIndex";

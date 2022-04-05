@@ -15,6 +15,10 @@ const todoReducer = (prevstate, { type, payload }) => {
             {
                 return [...payload];
             }
+        default:
+            {
+                return prevstate;
+            }
     }
 };
 
