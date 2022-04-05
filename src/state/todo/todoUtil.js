@@ -10,4 +10,14 @@ const addTodo = (todoList, todoObj, todoDispatch) => {
     todoDispatch({ type: TODO_ACTION.ADD_TODO, payload: [...todoList, newTodo] });
 };
 
-export { addTodo };
+const updateTodo = (todoState, todoObj, todoDispatch, id) => {
+    const updatedTodoList = todoState.reduce((acc, curr) => {
+        if (curr.id === id) return acc.concat({...curr, ...todoObj });
+        else return acc.concat(curr);
+    }, []);
+
+    localStorage.setItem("todo", JSON.stringify(updatedTodoList));
+    todoDispatch({ type: TODO_ACTION.UPDATE_TODO, payload: updatedTodoList });
+};
+
+export { addTodo, updateTodo };

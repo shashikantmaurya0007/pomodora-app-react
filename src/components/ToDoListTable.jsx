@@ -6,7 +6,15 @@ import { DisplayTodos } from "./componentIndex";
 import { useTheme } from "../state/stateIndex";
 const ToDoListTable = () => {
   const [showModel, setShowModel] = useState(false);
+  const [editIsEnabled, setEditIsEnabled] = useState(false);
+  const [idToBeEdited, setIdToBeEdited] = useState(null);
   const { theme } = useTheme();
+  const enableEdit = (id) => {
+    setIdToBeEdited((prev) => id);
+    setEditIsEnabled((prev) => true);
+    setShowModel((prev) => true);
+  };
+
   return (
     <div>
       <div
@@ -23,10 +31,16 @@ const ToDoListTable = () => {
             <AiOutlinePlusCircle className={styles.btn_size} />
           </button>
         </div>
-        <DisplayTodos />
+        <DisplayTodos enableEdit={enableEdit} />
       </div>
 
-      <AddToDoModel showModel={showModel} setShowModel={setShowModel} />
+      <AddToDoModel
+        showModel={showModel}
+        setShowModel={setShowModel}
+        editIsEnabled={editIsEnabled}
+        setEditIsEnabled={setEditIsEnabled}
+        idToBeEdited={idToBeEdited}
+      />
     </div>
   );
 };
