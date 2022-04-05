@@ -7,7 +7,7 @@ function App() {
   const { theme } = useTheme();
   return (
     <div className={`${theme === "dark" && styles.dark} ${styles.app}`}>
-      <LandingPage></LandingPage>
+      <LandingPage />
     </div>
   );
 }
