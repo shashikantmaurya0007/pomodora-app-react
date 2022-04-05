@@ -14,9 +14,16 @@ const AddToDoModel = ({ showModel, setShowModel }) => {
   const { todoState, todoDispatch } = useTodo();
   const [todoObj, setTodo] = useState(initalState);
   const addFormDataToTodo = () => {
-    addTodo(todoState, todoObj, todoDispatch);
-    setShowModel((prev) => !prev);
-    setTodo((prev) => initalState);
+    if (
+      todoObj.title.trim() &&
+      todoObj.description.trim() &&
+      todoObj.timeDuration
+    ) {
+      addTodo(todoState, todoObj, todoDispatch);
+
+      setShowModel((prev) => !prev);
+      setTodo((prev) => initalState);
+    }
   };
   const closeModel = () => {
     setShowModel((prev) => !prev);
@@ -60,6 +67,8 @@ const AddToDoModel = ({ showModel, setShowModel }) => {
             className={styles.todo_form_input}
             type="number"
             placeholder="Add Time"
+            min={2}
+            required
             value={todoObj.timeDuration}
             onChange={(e) =>
               setTodo((prev) => {
