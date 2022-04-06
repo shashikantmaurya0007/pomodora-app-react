@@ -13,7 +13,7 @@ const AddToDoModel = ({
   useEffect(() => {
     if (editIsEnabled) {
       const { title, description, timeDuration } = todoState.find(
-        (ele) => ele.id == idToBeEdited
+        (ele) => ele.id === idToBeEdited
       );
       setTodo((prev) => {
         return {
