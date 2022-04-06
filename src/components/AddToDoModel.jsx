@@ -64,7 +64,7 @@ const AddToDoModel = ({
         };
       });
     }
-  }, [editIsEnabled, todoState]);
+  }, [editIsEnabled, todoState, idToBeEdited]);
   if (!showModel) return null;
   return (
     <div className={`${styles.model} `}>
