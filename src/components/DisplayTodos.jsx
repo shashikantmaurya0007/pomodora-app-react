@@ -15,7 +15,7 @@ const DisplayTodos = ({ enableEdit }) => {
         console.log(ele.title, index);
         return (
           <div
-            onClick={() => navigate("/todo/8")}
+            onClick={() => navigate(`/todo/${ele.id}`)}
             key={ele.id}
             className={`${styles.individual_todo} ${
               theme === "dark" ? styles.dark : styles.light
