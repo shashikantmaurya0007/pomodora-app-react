@@ -1,11 +1,13 @@
 import React from "react";
-import { useTheme, useTodo } from "../state/stateIndex";
+import { useTheme, useTodo, deleteTodo } from "../state/stateIndex";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import styles from "../styles/DisplayTodos.module.css";
+import { useNavigate } from "react-router-dom";
 const DisplayTodos = ({ enableEdit }) => {
-  const { todoState } = useTodo();
+  const { todoState, todoDispatch } = useTodo();
   const { theme } = useTheme();
+  const navigate = useNavigate();
   console.log(todoState);
   return (
     <div className={`${styles.display_todo_container} `}>
@@ -13,6 +15,7 @@ const DisplayTodos = ({ enableEdit }) => {
         console.log(ele.title, index);
         return (
           <div
+            onClick={() => navigate("/todo/8")}
             key={ele.id}
             className={`${styles.individual_todo} ${
               theme === "dark" ? styles.dark : styles.light
@@ -27,9 +30,18 @@ const DisplayTodos = ({ enableEdit }) => {
             <div className={styles.btn_container}>
               <FaEdit
                 className={styles.btn}
-                onClick={() => enableEdit(ele.id)}
+                onClick={(e) => {
+                  enableEdit(ele.id);
+                  e.stopPropagation();
+                }}
               />
-              <MdDeleteForever className={styles.btn} />
+              <MdDeleteForever
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteTodo(todoState, ele.id, todoDispatch);
+                }}
+                className={styles.btn}
+              />
             </div>
           </div>
         );

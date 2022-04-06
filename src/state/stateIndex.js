@@ -5,5 +5,5 @@ export { TODO_ACTION }
 from "./todo/todoAction";
 export { useTodo, TodoProvider }
 from "./todo/todoContext";
-export { addTodo, updateTodo }
+export { addTodo, updateTodo, deleteTodo }
 from "./todo/todoUtil";

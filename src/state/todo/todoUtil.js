@@ -19,5 +19,9 @@ const updateTodo = (todoState, todoObj, todoDispatch, id) => {
     localStorage.setItem("todo", JSON.stringify(updatedTodoList));
     todoDispatch({ type: TODO_ACTION.UPDATE_TODO, payload: updatedTodoList });
 };
-
-export { addTodo, updateTodo };
+const deleteTodo = (todoState, id, todoDispatch) => {
+    const remainingTodoList = [...todoState.filter((prod) => prod.id !== id)];
+    localStorage.setItem("todo", JSON.stringify(remainingTodoList));
+    todoDispatch({ type: TODO_ACTION.DELETE_TODO, payload: remainingTodoList });
+};
+export { addTodo, updateTodo, deleteTodo };
