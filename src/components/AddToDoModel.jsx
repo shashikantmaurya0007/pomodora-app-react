@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "../styles/Model.module.css";
 import { ImCross } from "react-icons/im";
-import { useTheme, addTodo, useTodo } from "../state/stateIndex";
-const AddToDoModel = ({ showModel, setShowModel }) => {
+import { useTheme, addTodo, useTodo, updateTodo } from "../state/stateIndex";
+const AddToDoModel = ({
+  showModel,
+  setShowModel,
+  editIsEnabled,
+  setEditIsEnabled,
+  idToBeEdited,
+}) => {
   const { theme } = useTheme();
   const initalState = {
     title: "",
@@ -12,6 +18,7 @@ const AddToDoModel = ({ showModel, setShowModel }) => {
   };
 
   const { todoState, todoDispatch } = useTodo();
+
   const [todoObj, setTodo] = useState(initalState);
   const addFormDataToTodo = () => {
     if (
@@ -25,10 +32,39 @@ const AddToDoModel = ({ showModel, setShowModel }) => {
       setTodo((prev) => initalState);
     }
   };
+  const addEditedDataToTodo = () => {
+    if (
+      todoObj.title.trim() &&
+      todoObj.description.trim() &&
+      todoObj.timeDuration
+    ) {
+      updateTodo(todoState, todoObj, todoDispatch, idToBeEdited);
+
+      setShowModel((prev) => false);
+      setEditIsEnabled((prev) => false);
+      setTodo((prev) => initalState);
+    }
+  };
   const closeModel = () => {
     setShowModel((prev) => !prev);
     setTodo((prev) => initalState);
+    setEditIsEnabled((prev) => false);
   };
+  useEffect(() => {
+    if (editIsEnabled) {
+      const { title, description, timeDuration } = todoState.find(
+        (ele) => ele.id === idToBeEdited
+      );
+      setTodo((prev) => {
+        return {
+          ...prev,
+          title: title,
+          description: description,
+          timeDuration: timeDuration,
+        };
+      });
+    }
+  }, [editIsEnabled, todoState, idToBeEdited]);
   if (!showModel) return null;
   return (
     <div className={`${styles.model} `}>
@@ -84,12 +120,21 @@ const AddToDoModel = ({ showModel, setShowModel }) => {
           >
             Cancel
           </button>
-          <button
-            onClick={addFormDataToTodo}
-            className={`${styles.secondary_btn} ${styles.btn}`}
-          >
-            Add
-          </button>
+          {editIsEnabled ? (
+            <button
+              onClick={addEditedDataToTodo}
+              className={`${styles.secondary_btn} ${styles.btn}`}
+            >
+              update
+            </button>
+          ) : (
+            <button
+              onClick={addFormDataToTodo}
+              className={`${styles.secondary_btn} ${styles.btn}`}
+            >
+              Add
+            </button>
+          )}
         </div>
       </div>
     </div>

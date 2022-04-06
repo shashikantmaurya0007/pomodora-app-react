@@ -1,6 +1,7 @@
 .display_todo_container {
     width: 80%;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .individual_todo {

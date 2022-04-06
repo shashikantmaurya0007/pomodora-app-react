@@ -4,14 +4,17 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider, TodoProvider } from "./state/stateIndex";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <TodoProvider>
-        <App />
-      </TodoProvider>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider>
+        <TodoProvider>
+          <App />
+        </TodoProvider>
+      </ThemeProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
