@@ -10,20 +10,22 @@ const AddToDoModel = ({
   setEditIsEnabled,
   idToBeEdited,
 }) => {
+  const manageEdit = () => {
+    const { title, description, timeDuration } = todoState.find(
+      (ele) => ele.id === idToBeEdited
+    );
+    setTodo((prev) => {
+      return {
+        ...prev,
+        title: title,
+        description: description,
+        timeDuration: timeDuration,
+      };
+    });
+  };
+
   useEffect(() => {
-    if (editIsEnabled) {
-      const { title, description, timeDuration } = todoState.find(
-        (ele) => ele.id === idToBeEdited
-      );
-      setTodo((prev) => {
-        return {
-          ...prev,
-          title: title,
-          description: description,
-          timeDuration: timeDuration,
-        };
-      });
-    }
+    if (editIsEnabled) manageEdit();
   }, [editIsEnabled]);
   const { theme } = useTheme();
   const initalState = {
