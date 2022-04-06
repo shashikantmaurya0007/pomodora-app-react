@@ -8,3 +8,6 @@ from "./AddToDoModel";
 
 export { DisplayTodos }
 from "./DisplayTodos";
+
+export { IndividualTodoPomodora }
+from "./IndividualTodoPomodora";
