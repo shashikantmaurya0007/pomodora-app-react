@@ -16,3 +16,6 @@ from "./TodoTimer";
 
 export { BreakTimer }
 from "./BreakTimer";
+
+export { WrongRedirection }
+from "./WrongRedirection";

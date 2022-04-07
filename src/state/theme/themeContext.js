@@ -19,7 +19,7 @@ const ThemeProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    setTheme(localStorage.getItem("theme") || "light");
+    setTheme(localStorage.getItem("theme") || "dark");
   }, []);
 
   return (
