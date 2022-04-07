@@ -8,3 +8,14 @@ from "./AddToDoModel";
 
 export { DisplayTodos }
 from "./DisplayTodos";
+export { IndividualTodoPromo }
+from "./IndividualTodoPromo";
+
+export { TodoTimer }
+from "./TodoTimer";
+
+export { BreakTimer }
+from "./BreakTimer";
+
+export { WrongRedirection }
+from "./WrongRedirection";

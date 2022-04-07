@@ -7,7 +7,6 @@ const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
 
   const updateTheme = () => {
-    console.log("clicked");
     setTheme((prev) => {
       if (prev === "light") {
         localStorage.setItem("theme", "dark");
@@ -20,13 +19,12 @@ const ThemeProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    setTheme(localStorage.getItem("theme") || "light");
+    setTheme(localStorage.getItem("theme") || "dark");
   }, []);
 
   return (
     <themeContext.Provider value={{ theme, updateTheme }}>
-      {" "}
-      {children}{" "}
+      {children}
     </themeContext.Provider>
   );
 };

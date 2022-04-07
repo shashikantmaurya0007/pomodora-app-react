@@ -8,11 +8,10 @@ const DisplayTodos = ({ enableEdit }) => {
   const { todoState, todoDispatch } = useTodo();
   const { theme } = useTheme();
   const navigate = useNavigate();
-  console.log(todoState);
+
   return (
     <div className={`${styles.display_todo_container} `}>
       {todoState.map((ele, index) => {
-        console.log(ele.title, index);
         return (
           <div
             onClick={() => navigate(`/todo/${ele.id}`)}
