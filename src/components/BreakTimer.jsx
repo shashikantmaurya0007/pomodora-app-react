@@ -6,7 +6,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 function BreakTimer() {
   const time = new Date();
-  time.setSeconds(time.getSeconds() + 60);
+  time.setSeconds(time.getSeconds() + 10 * 60);
   const navigate = useNavigate();
   const expiryTimestamp = time;
   const { seconds, minutes } = useTimer({
@@ -14,7 +14,7 @@ function BreakTimer() {
     onExpire: () => navigate("/"),
   });
 
-  const percent = ((minutes * 60 + seconds) / (1 * 60)) * 100;
+  const percent = ((minutes * 60 + seconds) / (10 * 60)) * 100;
   console.log(percent);
   return (
     <div style={{ textAlign: "center" }}>
