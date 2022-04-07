@@ -7,7 +7,6 @@ const LandingPage = () => {
   const { theme } = useTheme();
   return (
     <div className={`${theme === "dark" && styles.dark}`}>
-      <Header />
       <ToDoListTable />
     </div>
   );

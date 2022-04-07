@@ -1,0 +1,11 @@
+.timer_details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.box {
+    width: 20rem;
+    height: 12rem;
+}
